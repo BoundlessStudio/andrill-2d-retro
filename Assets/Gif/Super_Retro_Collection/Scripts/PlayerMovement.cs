@@ -54,6 +54,12 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        if (movement.x > 0)
+            this.transform.localScale = new Vector3(-1, 1, 1);
+        if(movement.x < 0)
+            this.transform.localScale = Vector3.one;
+
         //animationUpdate();
     }
 
